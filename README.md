@@ -1,6 +1,8 @@
 # REST додаток-симулятор Соціальної Мережі
 
-Це REST-додаток, який генерує випадкових користувачів у базі данних та випадкові підписки між ними. По запиту до сервера можна отримувати інфо про а) всіх користувачів з підпиками б) індивідуального юзера з друзями в) топ-5 фоловлячих користувачів тощо. Для створення додатку використовувася Node.js, Express.js, Postgresql, Sequelize.
+[eng version => HERE](./Readme.en.md)
+
+Це REST-додаток, який генерує випадкових користувачів у базі данних та випадкові підписки між ними. По запиту до сервера можна отримувати інфо про а) всіх користувачів з підпиками б) індивідуального юзера з друзями в) топ-5 фоловлячих користувачів тощо. Для створення додатку використовувася Node.js, Express.js, Postgresql, Sequelize. Деплой на HerokuApp.
 
 ## Інструкції з використання
 
@@ -64,18 +66,26 @@ $ npm start
 ```
 
 ## Endpoints (з скриншотами)
+
 * **/users** видає всіх користувачів, які зробили мінімум 1 підписку
+* [DEMO LINK](https://restapp-sn-simulator.herokuapp.com/users)
 
 ![alt text](./imgs/users.png "users_endpoint")
 
-* **/users/:USERid/friends?order_by=:collumn_name&order_type=:direction** видає користувача з друзями (там де є взаємна підписка), кількість друзів, їхній список (який можна сортувати за назвою колонки та DESC/ASC)
+
+* **:USERid/friends?order_by=:collumn_name&order_type=:direction** видає користувача з друзями (там де є взаємна підписка), кількість друзів, їхній список (який можна сортувати за назвою колонки та DESC/ASC)
+* [DEMO LINK](https://restapp-sn-simulator.herokuapp.com/1/friends?order_by=name&order_type=desc)
 
 ![alt text](./imgs/getUser.png "single_user_endpoint")
 
+
 * **/max-following** видає топ-5 юзерів за кількістю зроблених підписок.
+* [DEMO LINK](https://restapp-sn-simulator.herokuapp.com/max-following)
 
 ![alt text](./imgs/top_five.png "top-five_endpoint")
 
+
 * **/not-following** видає юзерів, які не зробили жодної підписки
+* [DEMO LINK](https://restapp-sn-simulator.herokuapp.com/not-following)
 
 ![alt text](./imgs/not_following.png "no_fol_endpoint")
