@@ -9,6 +9,7 @@ module.exports = {
 
 		let data = [];
 		let people = 155;
+		let id = 1000;
 
 		for (let userId = 1; userId < people; userId++) {
 			let friends = randomIntFromInterval(0, 150);
@@ -16,6 +17,7 @@ module.exports = {
 			while(friends--) {
 				let date = new Date();
 				data.push({
+					id: id++,
 					followingUserID: randomIntFromInterval(1, people),
 					user_id: userId,
 					created_at: date,

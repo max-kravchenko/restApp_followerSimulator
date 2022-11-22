@@ -2,6 +2,7 @@
 
 const express = require('express');
 const cors = require('cors');
+const process = require('process');
 
 const app = express();
 
@@ -158,6 +159,6 @@ app.get('/not-following', express.json(), async (req, res) => {
 	res.send(usersWithNoSubs);
 });
 
-app.listen('4000', () => {
+app.listen((process.env.PORT || 5000), () => {
 	console.log('Me runnig');
 });

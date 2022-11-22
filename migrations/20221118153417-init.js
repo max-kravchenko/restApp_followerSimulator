@@ -1,13 +1,15 @@
 'use strict';
 
+const { INTEGER } = require('sequelize');
+
 module.exports = {
 	async up(queryInterface, Sequelize) {
 		await queryInterface.createTable('user', {
 			id: {
 				allowNull: false,
-				autoIncrement: true,
 				primaryKey: true,
 				type: Sequelize.INTEGER,
+				defaultValue: INTEGER,
 			},
 			name: {
 				type: Sequelize.STRING,
@@ -30,9 +32,9 @@ module.exports = {
 		await queryInterface.createTable('subscription', {
 			id: {
 				allowNull: false,
-				autoIncrement: true,
 				primaryKey: true,
-				type: Sequelize.UUIDV4,
+				type: Sequelize.INTEGER,
+				defaultValue: INTEGER,
 			},
 			followingUserID: {
 				type: Sequelize.INTEGER,
