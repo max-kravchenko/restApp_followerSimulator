@@ -12,6 +12,12 @@ const { DataTypes, Op } = require('sequelize');
 
 const { sequelize } = require('../models');
 
+let port = process.env.PORT;
+
+if (port == null || port == '') {
+	port = 4000;
+}
+
 const SUBSCRIPTION = sequelize.define(
 	'SUBSCRIPTION',
 	{
@@ -159,6 +165,6 @@ app.get('/not-following', express.json(), async (req, res) => {
 	res.send(usersWithNoSubs);
 });
 
-app.listen((process.env.PORT || 5000), () => {
+app.listen(port, () => {
 	console.log('Me runnig');
 });
