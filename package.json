@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "engines": {
+    "node": "14.18.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "make-model": "npx sequelize-cli model:generate --name User --attributes gender:string",
