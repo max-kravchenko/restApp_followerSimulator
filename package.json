@@ -11,8 +11,7 @@
     "make-seed": "npx sequelize-cli seed:generate --name demo-user",
     "seed": "npx sequelize-cli db:seed:all",
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "heroku-postbuild": "npm run build"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
